@@ -1,45 +1,52 @@
 
 import AlertBox from './components/AlertBox/AlertBox';
+import UserProfileCard from './components/UserProfileCard/UserProfileCard';
 
 import "./App.css";
 
-// For Testing optional props
-//Option 1: Use an array of sample data
 
-// const alerts = [
-//   {
-//     id: 1,
-//     type: "success" as const,
-//     message: "Saved successfully!",
-//   },
-//   {
-//     id: 2,
-//     type: "error" as const,
-//     message: "Something went wrong!",
-//   },
-//   {
-//     id: 3,
-//     type: "warning" as const,
-//     message: "Please check your input!",
-//   },
-// ];
+const user = {
+  id: '1',
+  name: 'John Doe',
+  email: 'john.doe@example.com',
+  role: 'Software Engineer',
+  avatarUrl: 'https://example.com/avatar.jpg'
+};
 
-export default function App(){
-  return(
-    <AlertBox
-    type ="success"
-    message ="Saved Successfully"
-     onClose = {()=>alert("Alert closed!")}
-     >
-    <strong>Your changes have been saved</strong>
-   
-   
-    </AlertBox>
-    
+export default function App() {
+  return (
+    <>
+   {/* For the AlertBox */}
+      <div>
 
-    
-   
+        <h2>Alert Box Examples</h2>
+        <AlertBox
+          type="success"
+          message="Saved Successfully"
+          onClose={() => alert("Alert closed!")}
+        >
+          <strong>Your changes have been saved</strong>
+
+
+        </AlertBox>
+      </div>
+
+    {/*  For the User Profile  */}
+      <div>
+        <h2> User Profile Example</h2>
+
+        <UserProfileCard user={user}
+          showEmail={true}
+          showRole={true}
+          onEdit={(userId) => alert(`Editing user ${userId}`)} >
+          <div> Last login: 2 hours ago </div>
+        </UserProfileCard>
+      </div>
+    </>
+
+
+
+
   );
 }
 
- 
