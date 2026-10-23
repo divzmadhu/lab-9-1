@@ -6,6 +6,7 @@ export default function App(){
     <AlertBox
     type ="success"
     message ="Saved Successfully"
+    onClose = {()=>alert("Alert closed!")}
 
     />
    
