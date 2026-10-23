@@ -1,8 +1,15 @@
 
+import AlertBox from './components/AlertBox/AlertBox';
+
 export default function App(){
   return(
-    <h1> Hello, World! </h1>
-  )
+    <AlertBox
+    type ="success"
+    message ="Saved Successfully"
+
+    />
+   
+  );
 }
 
  
